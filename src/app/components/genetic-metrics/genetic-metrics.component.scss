@@ -1,0 +1,345 @@
+.floating-message {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  margin-top: 15px;
+  margin-right: 15px;
+  height: 45px;
+  background-color: #f0f9f8;
+  border: 1.5px solid #c6e9e5;
+  border-radius: 8px;
+}
+
+.show-message {
+  max-width: 500px;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.hide-message {
+  max-width: 0px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.message-marker {
+  display: flex;
+  width: 6px;
+  height: 100%;
+  background-color: #01a28d;
+  border-radius: 8px 0 0 8px;
+  margin-right: 7px;
+}
+
+.floating-message-header {
+  display: flex;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  & svg {
+    width: 27px;
+    height: 27px;
+    fill: #01a28d;
+    margin-right: 5px;
+  }
+
+  & p {
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    color: #01a28d;
+    font-weight: 500;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  background-color: #0c174f;
+
+  & p {
+    width: 85%;
+    overflow-wrap: break-word;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    margin-left: 20px;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+  }
+}
+
+.subheader {
+  position: relative;
+}
+
+.file-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: fit-content;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  & p {
+    margin: 0;
+    color: #0c174f;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+  }
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: 40px;
+  border-radius: 12px;
+  border: 1.25px solid #0c174f;
+  margin-top: 15px;
+  margin-left: 3%;
+
+  & svg {
+    width: 20px;
+    height: 20px;
+    stroke: #0c174f;
+    margin-right: 3px;
+    margin-left: 5px;
+  }
+
+  & p {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    color: #0c174f;
+    font-weight: 500;
+    margin-right: 10px;
+    font-size: 14px;
+  }
+}
+
+.back-button:hover {
+  cursor: pointer;
+  border: 1.25px solid #ff006e;
+
+  & p {
+    color: #ff006e;
+    transition: 0.3s;
+  }
+
+  & svg {
+    stroke: #ff006e !important;
+    transition: 0.3s;
+  }
+  transition: 0.3s;
+}
+
+.call-rate-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 80px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 2px 2px 5px #7d7d7d;
+  margin: 10px 0 10px 3%;
+}
+
+.call-rate-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+
+  & svg {
+    width: 25px;
+    height: 25px;
+    stroke: #7d7d7d;
+    margin-right: 10px;
+  }
+}
+
+#call-rate-title {
+  margin: 10px 0 10px 10px;
+  font-size: 18px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #0c174f;
+  font-weight: 600;
+}
+
+#call-rate-value {
+  margin: 0 0 0 10px;
+  font-size: 22px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #ff006e;
+  font-weight: bold;
+}
+
+.loader-call-rate {
+  width: 30px;
+  height: 30px;
+  border: 3.25px solid #0c174f;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader-variants {
+  width: 50px;
+  height: 50px;
+  border: 3.25px solid #0c174f;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader-export {
+  width: 23px;
+  height: 23px;
+  border: 3.25px solid #0c174f;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.variant-list {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  height: 360px;
+  margin: 15px auto;
+  border-radius: 15px;
+  border-bottom: 1.5px solid black;
+  border-left: 1.5px solid black;
+  border-right: 1.5px solid black;
+  background-color: white;
+  box-shadow: 2px 2px 5px #7d7d7d;
+}
+
+.variant-list-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-color: #0c174f;
+  border-radius: 15px 15px 0 0;
+
+  & p {
+    color: white;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+  }
+}
+
+.scrollable-variant-list {
+  width: 100%;
+  height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.variant-list-item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1.5px solid #0c174f;
+
+  & p {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-weight: 600;
+    margin-right: 3.5%;
+  }
+}
+
+#chromosome {
+  color: #0c174f;
+}
+
+#variant-count {
+  color: #ff006e;
+}
+
+.button-container {
+  display: flex;
+  width: 95%;
+  margin: 10px auto;
+  justify-content: flex-end;
+}
+
+.export-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 105px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1.5px solid #0c174f;
+
+  & svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    stroke: #0c174f;
+  }
+
+  & p {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    color: #0c174f;
+    font-weight: 500;
+  }
+}
+
+.export-button:hover {
+  cursor: pointer;
+  border: 1.5px solid #ff006e;
+  transition: 0.3s;
+  & svg {
+    stroke: #ff006e !important;
+    transition: 0.3s;
+  }
+
+  & p {
+    color: #ff006e;
+    transition: 0.3s;
+  }
+}

@@ -1,0 +1,128 @@
+<div
+  [ngClass]="{ 'show-message': showMessage, 'hide-message': !showMessage }"
+  class="floating-message"
+>
+  <div class="message-marker"></div>
+  <div class="floating-message-header">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="size-6"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+        clip-rule="evenodd"
+      />
+    </svg>
+
+    <p>
+      Fichero
+      {{ "resumen_" + file!.split("_")[1] + "_" + file!.split("_")[2] }}
+      creado con éxito
+    </p>
+  </div>
+</div>
+
+<div class="header">
+  <p>Análisis de genotipado</p>
+</div>
+
+<div class="subheader">
+  <div (click)="navigateToFileSelection()" class="back-button">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="size-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5"
+      />
+    </svg>
+
+    <p>Volver</p>
+  </div>
+
+  <div class="file-name">
+    <p>{{ formatFileName() | titlecase }}</p>
+  </div>
+</div>
+
+<div class="call-rate-container">
+  <div class="loading-container" *ngIf="loadingCallRate">
+    <span class="loader-call-rate"></span>
+  </div>
+  <div *ngIf="!loadingCallRate">
+    <div class="call-rate-header">
+      <p id="call-rate-title">Call Rate:</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33"
+        />
+      </svg>
+    </div>
+    <p id="call-rate-value">{{ callRate }} %</p>
+  </div>
+</div>
+
+<div class="variant-list">
+  <div class="variant-list-header">
+    <p id="chromosome-header">Cromosomas</p>
+    <p id="variant-header">Variantes Válidos</p>
+  </div>
+
+  <div *ngIf="!loadingVariants">
+    <div class="scrollable-variant-list">
+      <div *ngFor="let variant of chromosomeVariants" class="variant-list-item">
+        <p id="chromosome">Cromosoma {{ variant.chromosome }}</p>
+        <p id="variant-count">{{ variant.variantCount }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="loading-container" *ngIf="loadingVariants">
+    <span class="loader-variants"></span>
+  </div>
+</div>
+
+<div class="button-container">
+  <div (click)="saveResults()" class="export-button">
+    <div style="display: flex; align-items: center" *ngIf="!loadingExport">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"
+        />
+      </svg>
+
+      <p>Exportar</p>
+    </div>
+
+    <div class="loading-container" *ngIf="loadingExport">
+      <span class="loader-export"></span>
+    </div>
+  </div>
+</div>
