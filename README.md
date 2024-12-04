@@ -6,7 +6,7 @@ Una aplicación desarrollada en **Angular v16** con un backend eficiente constru
 
 ## Explicación Cálculos
 
-El Call Rate se ha cálculado, obteniendo el número total de variantes validos presentes, es decir todos aquellos registros donde el atributo `GENOTYPE` en los datos no sea vacío (`--`), y dividirlo por el número total de variantes presentes (validos + no validos), multiplicado por 100 para obtenr el porcentage
+El Call Rate se ha cálculado, obteniendo el número total de variantes validos presentes, es decir todos aquellos registros donde el atributo `GENOTYPE` en los datos no sea vacío (`--`), y dividirlo por el número total de variantes presentes (validos + no validos), multiplicado por 100 para obtener el porcentage
 
 Los variantes validos para cada cromosoma se obtienen, primero sacando todos los variantes validos presentes (`GENOTYPE` no es igual a `--`), juntar los variantes validos por cromosoma, es decir agrupar por `CHR`, y finalmente contar los variantes
 
