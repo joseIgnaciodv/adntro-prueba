@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Una aplicación desarrollada en **Angular v16** con un backend eficiente construido en **Flask** y **Python** (fichero solucion.py) para procesar archivos de genotipado. Permite calcular métricas clave como el **Call Rate** y la distribución de variantes genéticas por cromosoma a partir de archivos seleccionados por el usuario.
+Una aplicación desarrollada en **Angular v16** con un backend eficiente construido en **Flask** y **Python** (fichero solucion.py) para procesar archivos de genotipado. Permite calcular métricas clave como el **Call Rate** y la distribución de variantes genéticas por cromosoma a partir de archivos seleccionados por el usuario. Los resultados se guardan donde esta hosteado el fichero de Flask (Pythonaywhere).
 
 ## Explicación Cálculos
 
