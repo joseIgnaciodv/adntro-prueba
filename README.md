@@ -1,27 +1,21 @@
-# AdntroPrueba
+# Análisis Básico de Genotipado - ADNTRO Prueba
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+## Descripción
 
-## Development server
+Una aplicación desarrollada en **Angular v16** con un backend eficiente construido en **Flask** y **Python** (fichero solucion.py) para procesar archivos de genotipado. Permite calcular métricas clave como el **Call Rate** y la distribución de variantes genéticas por cromosoma a partir de archivos seleccionados por el usuario.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Explicación Cálculos
 
-## Code scaffolding
+El Call Rate se ha cálculado, obteniendo el número total de variantes validos presentes, es decir todos aquellos registros donde el atributo `GENOTYPE` en los datos no sea vacío (`--`), y dividirlo por el número total de variantes presentes (validos + no validos), multiplicado por 100 para obtenr el porcentage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Los variantes validos para cada cromosoma se obtienen, primero sacando todos los variantes validos presentes (`GENOTYPE` no es igual a `--`), juntar los variantes validos por cromosoma, es decir agrupar por `CHR`, y finalmente contar los variantes
 
-## Build
+## Instrucciones ejecución
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clonar repositorio `https://github.com/joseIgnaciodv/adntro-prueba.git`
 
-## Running unit tests
+2. Instalar las dependencias del proyecto, `npm install` o `npm i`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Introducir `ng serve` en la línea de comandos, para ejecutar la aplicación
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4. Copiar `http://localhost:4200/` en cualquier navegador para empezar a usar la aplicación
