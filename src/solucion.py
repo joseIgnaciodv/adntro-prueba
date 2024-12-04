@@ -31,7 +31,7 @@ def saveResults(url: str):
     callRate = str(calculateCallRate(url))
     chromosomeVariants = calculateChromosomeVariants(url)
     fileFormat = url.split("_")[1] + "_" + url.split("_")[2]
-    results = open("/home/ignaciodvb/mysite/resumen_" + fileFormat + ".txt", "w")    # Guardar resultados en el fichero resumen.txt
+    results = open("/home/ignaciodvb/mysite/resumen_" + fileFormat + ".txt", "w")    # Guardar resultados en el fichero resumen_nombre_paciente.txt
     results.write("Call rate: " + callRate + "%" + "\n")
     results.write("\nVariantes cromosoma: \n")
     for variant in chromosomeVariants:
